@@ -48,7 +48,10 @@ module tsl1401
     localparam CNT_SI_START             = 0;
     localparam CNT_INTERNAL_RESET_END   = (CNT_SI_START + 18);
     localparam CNT_INTEGRATION_END      = (CNT_SI_START + 129);
-    localparam CNT_WAIT_TQT_END         = (CNT_INTEGRATION_END + 5); // min 20us, align even
+
+    // Pixel charge transfer time Min 20us (Datasheet Figure 8, symbol: tqt)
+    // Align event trigger counts to even numbers.
+    localparam CNT_WAIT_TQT_END         = (CNT_INTEGRATION_END + 5);
 
 
     reg [7:0] clk_div;
@@ -74,14 +77,14 @@ module tsl1401
 	end
     end
 
-
     // shift phase 50%.
-    // Analog output settling time typ 10ns (symbol: tqt)
+    // Analog output settling time Typ 120ns (Datasheet Figure 9, symbol: ts)
+    // @todo configurable of phase shift
     always @(posedge clk) begin
 	if (reset == 1'b1) begin
 	    mcu_ad_trig <= 1'b0;
-	end else if (state  == STATE_INTERNAL_RESET || state == STATE_PIXEL_INTEGRATING) begin
-
+	end
+	else if (state  == STATE_INTERNAL_RESET || state == STATE_PIXEL_INTEGRATING) begin
 	    if (sensor_si != 1'b1) begin
 		mcu_ad_trig <= ~sensor_clk;
 	    end
