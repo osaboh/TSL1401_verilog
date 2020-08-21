@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.98 (w)1999-2019 BSI
+[*] Fri Aug 21 18:23:44 2020
+[*]
+[dumpfile] "/home/osanai/Dev/FPGA/TSL1401_verilog/wave.vcd"
+[dumpfile_mtime] "Fri Aug 21 18:21:17 2020"
+[dumpfile_size] 178774
+[savefile] "/home/osanai/Dev/FPGA/TSL1401_verilog/tsl1401.gtkw"
+[timestart] 0
+[size] 2560 1403
+[pos] -1 -1
+*-24.000000 37200000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tsl1401_testbench.
+[sst_width] 228
+[signals_width] 227
+[sst_expanded] 1
+[sst_vpaned_height] 420
+@28
+tsl1401_testbench.tsl1401_inst.reset
+tsl1401_testbench.tsl1401_inst.clk
+@22
+tsl1401_testbench.tsl1401_inst.clk_div[7:0]
+@23
+tsl1401_testbench.tsl1401_inst.state_count[7:0]
+@28
+tsl1401_testbench.tsl1401_inst.sensor_clk
+tsl1401_testbench.tsl1401_inst.sensor_si
+tsl1401_testbench.tsl1401_inst.mcu_ad_trig
+tsl1401_testbench.tsl1401_inst.state[1:0]
+[pattern_trace] 1
+[pattern_trace] 0
